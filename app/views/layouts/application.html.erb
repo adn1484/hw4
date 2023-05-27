@@ -10,15 +10,24 @@
   </head>
 
   <body>
+    <p>
+    <% user = User.find_by({ "id" => session["user_id"]}) %>
+    <% if user != nil %>
+      <a href="/">Home</a>
+      Logged in as: <%= user["username"] %>
+      <a href="/logout">Logout</a>
+
+      <% else %>
+      <a href="/">Home</a>
+      <a href="/login">Login</a>
+      <a href="/users/new">Signup</a>
+      <% end %>
+    </p>
+
     <div>
       <%= flash["notice"] %>
     </div>
-    <div>
-      <a href="/">Home</a>
-      <a href="/logout">Logout</a>
-      <a href="/login">Login</a>
-      <a href="/users/new">Signup</a>
-    </div>
+   
 
     <%= yield %>
   </body>
