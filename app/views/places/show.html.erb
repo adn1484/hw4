@@ -7,9 +7,11 @@
   <p><%= post["description"] %></p>
 <% end %>
 
+<% if @current_user != nil %>
 <p>
   <a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
 </p>
+<% end %>
 
 <p>
   <a href="/places">Back to All Places</a>
