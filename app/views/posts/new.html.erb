@@ -2,8 +2,7 @@
 
 <%= form_with :model => @post do |form| %>
   
-  <div class="row">
-  <div class="mb-3">
+   <div class="mb-3">
   <%= form.hidden_field "place_id" %>
     <%= form.label "title", :class => "form-label" %>
     <%= form.text_field "title", :class => "form-control" %>
@@ -25,6 +24,6 @@
   </div>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit "Create post", class: "btn btn-primary" %>
   </p>
 <% end %>

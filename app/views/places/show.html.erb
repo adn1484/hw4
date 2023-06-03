@@ -1,14 +1,14 @@
 <h1 class="text-primary"><%= @place["name"] %></h1>
 
-<h2 class="text-secondary">My Posts</h2>
+<h2 class="text-secondary mt-3">My Posts</h2>
 
 <% if @current_user != nil %>
 <p>
-  <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-secondary">New Post</a>
+  <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-secondary mt-3">New Post</a>
 </p>
 <% end %>
 
-<div class="row">
+<div>
 <% for post in @posts %>
   <div class="col-lg-4">
   <h3><%= post["title"] %></h3>
